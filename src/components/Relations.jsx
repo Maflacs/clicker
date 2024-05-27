@@ -1,11 +1,11 @@
 import React, { useContext } from 'react';
 import LangContext from '../context/LangContext';
 
-const Relations = ({ relations, onClick }) => {
+const Relations = ({ color, relations, onClick }) => {
   const { state: { lang } } = useContext(LangContext);
 
   return (
-    <table className="skills-table">
+    <table className={`skills-table ${color}`}>
       <tbody>
         {relations.map((relation, index) => (
           relation.unlocked && (

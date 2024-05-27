@@ -1,13 +1,59 @@
-html {
-  font-size: 16px;
+*,
+*::before,
+*::after {
   box-sizing: border-box;
-  font-family: 'Trebuchet MS', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
 }
 
-* {
+html {
+  font-size: 16px;
+  font-family: "Trebuchet MS", "Lucida Grande", "Lucida Sans", Arial, sans-serif;
+  scroll-behavior: smooth;
+  color: var(--hBgD);
+}
+
+:root {
+  --hBg: #f8e16c;
+  --hBgD: #343a40;
+  --Bg: #f8f398;
+  --BgD: black;
+  --TBg: #f8e16c;
+  --TBgD: orange;
+}
+
+.bgDark {
+  background-color: var(--hBgD);
+  color: var(--Bg);
+}
+
+.bgDarkC {
+  background-color: var(--TBgD);
+  color: var(--hBgD);
+}
+
+.bgLightC {
+  background-color: var(--hBg);
+}
+
+.header {
+  width: 100%;
+  display: flex;
+  justify-content:space-around;
+  align-items: center;
   margin: 0;
-  padding: 0;
-  box-sizing: inherit;
+}
+
+.rbtn {
+  position: fixed;
+ left: 5rem;
+ top: 0.5rem;
+}
+
+.restart {
+  font-size: 22px;
+  background-color: var(--Bg);
+  border: 3px solid orange;
+  border-radius: 30%;
+  padding: 1rem;
 }
 
 .business-table {
@@ -16,8 +62,8 @@ html {
 
 body {
   min-width: 540px;
-  margin: 18px;
-  background-color: #ffbf69;  
+  background-color: var(--Bg);  
+  margin: 0;
 }
 
 .toggle {
@@ -27,14 +73,19 @@ body {
   border: 1px solid grey;
   background-color: white;
   position: fixed;
+  top: 2rem;
   right: 5rem;
   display: flex;
   justify-content: space-around;
 }
 
 .lang {
-  right: 8rem;
-  font-size: 16px;
+  right: 9rem;
+  color: black;
+}
+
+.lang p {
+  margin-top: 0.1rem;
 }
 
 .icon {
@@ -56,17 +107,9 @@ p {
   user-select: none;
 }
 
-h1 {
-  text-align: center;
-  margin: 1em 0;
-}
-
-
-
 .skills-table,
 .business-table {
   margin: 0 20px;
-  background-color: #f8e16c;
   border-radius: 5%;
   -webkit-border-radius: 5%;
   -moz-border-radius: 5%;
@@ -156,6 +199,20 @@ td>img:hover {
       width: 14%;
   }
   
+}
+
+@media screen and (max-width: 700px) {
+  .toggle {
+    right: 1rem;
+  }
+
+  .lang {
+    right: 5rem;
+  }
+
+  .rbtn {
+    left: 1rem;
+  }
 }
 
 @media screen and (max-width: 992px) {

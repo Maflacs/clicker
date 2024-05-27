@@ -1,13 +1,13 @@
 import React, { useContext } from "react";
 import LangContext from "../context/LangContext";
 
-const Learnings = ({ learnings, onClick }) => {
+const Learnings = ({ color, learnings, onClick }) => {
   const {
     state: { lang },
   } = useContext(LangContext);
 
   return (
-    <table className="skills-table">
+    <table className={`skills-table ${color}`}>
       <tbody>
         {learnings.map(
           (learning, index) =>

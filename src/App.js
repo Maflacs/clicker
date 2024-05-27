@@ -7,6 +7,7 @@ import Learnings from './components/Learnings';
 import Relations from './components/Relations';
 import { getInitialState } from './utils/state';
 import LangContext from './context/LangContext';
+import { ThemeContext } from './context/ThemeContext';
 
 function App() {
   const [state, setState] = useState(() => {
@@ -15,6 +16,18 @@ function App() {
   });
 
   const { state: { lang } } = useContext(LangContext);
+
+  const {
+    state: { darkMode },
+  } = useContext(ThemeContext);
+
+  const getClassName = () => {
+     return darkMode ? "bgDark" : "bgLight"
+  };
+
+  const getClassNameContainer = () => {
+    return darkMode ? "bgDarkC" : "bgLightC"
+ };
 
   useEffect(() => {
     const intervalId = setInterval(administrateTime, 200);
@@ -99,11 +112,11 @@ function App() {
   };
 
   return (
-    <div>
-      <Header onRestart={handleRestart} />
+    <div className={getClassName()}>
+      <Header color={getClassNameContainer()} onRestart={handleRestart} />
       <main className="main-container">
         <section className="inventory-container per-click">
-          <Learnings learnings={state.learnings} onClick={handleLearningsClicked} />
+          <Learnings color={getClassNameContainer()} learnings={state.learnings} onClick={handleLearningsClicked} />
         </section>
         <section className="clicking-area-container xp">
           <Timer sec={state.sec} />
@@ -111,7 +124,7 @@ function App() {
           <Knowledge state={state} />
         </section>
         <section className="inventory-container per-sec">
-          <Relations relations={state.relations} onClick={handleRelationsClicked} />
+          <Relations color={getClassNameContainer()} relations={state.relations} onClick={handleRelationsClicked} />
         </section>
       </main>
     </div>
