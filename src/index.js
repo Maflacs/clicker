@@ -7,9 +7,9 @@ import { ThemeProvider } from "./context/ThemeContext";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
-  <LangProvider>
-    <ThemeProvider>
+  <ThemeProvider>
+    <LangProvider>
       <App />
-    </ThemeProvider>
-  </LangProvider>
+    </LangProvider>
+  </ThemeProvider>
 );

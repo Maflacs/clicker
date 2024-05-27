@@ -20,6 +20,38 @@ body {
   background-color: #ffbf69;  
 }
 
+.toggle {
+  width: 50px;
+  height: 25px;
+  border-radius: 20px;
+  border: 1px solid grey;
+  background-color: white;
+  position: fixed;
+  right: 5rem;
+  display: flex;
+  justify-content: space-around;
+}
+
+.lang {
+  right: 8rem;
+  font-size: 16px;
+}
+
+.icon {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+}
+
+.button {
+  width: 25px;
+  height: 25px;
+  border-radius: 50%;
+  background-color: #999;
+  position: absolute;
+  cursor: pointer;
+}
+
 p {
   user-select: none;
 }

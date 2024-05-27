@@ -1,43 +1,65 @@
 import React, { useContext } from 'react';
 import LangContext from '../context/LangContext';
 
-const Relations = ({ onClick }) => {
-    const { state } = useContext(LangContext);
-    const currentLang = state.lang === "hu" ? state.hu.relations : state.en.relations;
+const Relations = ({ relations, onClick }) => {
+  const { state: { lang } } = useContext(LangContext);
 
-    return (
-        <table className="business-table">
-            <tbody>
-                {currentLang.map((relation, index) => (
-                    relation.unlocked && (
-                    <tr key={index}>
-                        <td>
-                            <img
-                                src={relation.link}
-                                alt={relation.relationName}
-                                data-index={index}
-                                onClick={() => onClick(index)}
-                            />
-                        </td>
-                        <td className="price">
-                            <p>db: {relation.amount}</p>
-                            <p>ár: {formatPrice(relation.price)}</p>
-                        </td>
-                        <td>
-                            <p><strong>{relation.relationName} ({relation.knowledgePerSecIncrement} knowledge / sec)</strong></p>
-                            <p>{relation.description}</p>
-                        </td>
-                    </tr>
-                )))}
-            </tbody>
-        </table>
-    );
+  return (
+    <table className="skills-table">
+      <tbody>
+        {relations.map((relation, index) => (
+          relation.unlocked && (
+            <tr key={index}>
+              <td>
+              {lang === "hu" ? (
+                    <p>
+                      <strong>
+                        {relation.relationName[lang]} (
+                        {relation.knowledgePerSecIncrement} tudáspont / click)
+                      </strong>
+                    </p>
+                  ) : (
+                    <p>
+                      <strong>
+                        {relation.relationName[lang]} (
+                        {relation.knowledgePerSecIncrement} knowledge / click)
+                      </strong>
+                    </p>
+                  )}
+                <p>{relation.description[lang]}</p>
+              </td>
+              {lang === "hu" ? (
+                  <td className="price">
+                    <p>db: {relation.amount}</p>
+                    <p>ár: {formatPrice(relation.price)}</p>
+                  </td>
+                ) : (
+                  <td className="price">
+                    <p>pcs: {relation.amount}</p>
+                    <p>price: {formatPrice(relation.price)}</p>
+                  </td>
+                )}
+              <td>
+                <img
+                  draggable="false"
+                  src={relation.link}
+                  alt={relation.relationName[lang]}
+                  data-index={index}
+                  onClick={() => onClick(index)}
+                />
+              </td>
+            </tr>
+          )
+        ))}
+      </tbody>
+    </table>
+  );
 };
 
 const formatPrice = (price) => {
-    if (price < 1000) return price;
-    let kValue = price / 1000;
-    return `${kValue}K`;
+  if (price < 1000) return price;
+  let kValue = price / 1000;
+  return `${kValue}K`;
 };
 
 export default Relations;

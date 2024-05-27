@@ -1,25 +1,29 @@
-import React, { useContext } from "react";
-import LangContext from "../context/LangContext";
-import { getInitialState } from "../utils/state";
+import React, { useContext, useEffect } from "react";
 import ChangeLanguage from "./ChangeLanguage";
 import ChangeTheme from "./ChangeTheme";
+import { ThemeContext } from "../context/ThemeContext";
+import { LangContext } from "../context/LangContext";
 
-const Header = () => {
-  const { state } = useContext(LangContext);
-  const currentLang = [state.lang];
+const Header = ({onRestart}) => {
 
-  const handleRestart = (setState) => {
-    const initialState = getInitialState();
-    localStorage.setItem("gameState", JSON.stringify(initialState));
-    setState(initialState);
-  };
+  const {
+    state: { darkMode },
+  } = useContext(ThemeContext);
 
+  const {
+    state: { lang },
+  } = useContext(LangContext);
+
+  useEffect(() => {}, [darkMode, lang]);
+ 
   return (
     <header>
-      <button onClick={handleRestart}>Restart</button>
-      <ChangeLanguage />
-      <ChangeTheme />
-      {currentLang === "hu" ? <h1>Varázslóiskola</h1> : <h1>Magic School</h1>}
+      <div>
+        <button onClick={onRestart}>Restart</button>
+        <ChangeLanguage />
+        <ChangeTheme />
+      </div>
+      {lang === "hu" ? <h1>Varázslóiskola</h1> : <h1>Magic school</h1> }
     </header>
   );
 };
