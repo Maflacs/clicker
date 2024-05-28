@@ -40,15 +40,15 @@ html {
 .header {
   width: 100%;
   display: flex;
-  justify-content:space-around;
+  justify-content: space-around;
   align-items: center;
   margin: 0;
 }
 
 .rbtn {
   position: fixed;
- left: 5rem;
- top: 0.5rem;
+  left: 5rem;
+  top: 0.5rem;
 }
 
 .restart {
@@ -65,7 +65,7 @@ html {
 
 body {
   min-width: 540px;
-  background-color: var(--Bg);  
+  background-color: var(--Bg);
   margin: 0;
 }
 
@@ -134,20 +134,19 @@ h1 {
 
 .inventory-container {
   min-width: 540px;
-
 }
 
 .price {
   width: 15%;
-  padding-left: .5em;
-  padding-right: .5em;
+  padding-left: 0.5em;
+  padding-right: 0.5em;
 }
 
 .clicking-area-container {
   text-align: center;
 }
 
-.xp>img:hover {
+.xp > img:hover {
   transform: scale(1.1);
   -webkit-transform: scale(1.1);
   -moz-transform: scale(1.1);
@@ -165,78 +164,91 @@ img {
   -o-border-radius: 50%;
 }
 
-.xp>img {
+.xp > img {
   margin: 1em;
 }
 
-td>img {
+td > img {
   opacity: 75%;
 }
 
-td>img:hover {
+td > img:hover {
   opacity: 1;
 }
 
-/* Az alert háttere */
-.alert {
-  background-color: #f44336; /* Piros */
-  color: white;
-  padding: 20px;
-  border-radius: 10px;
-  font-size: 18px;
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 22px;
 }
 
-/* Az alert becsomagolója */
-.alert-wrapper {
-  position: fixed;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
+.modal-content {
+  padding: 20px;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.modal-content p {
+  margin-bottom: 10px;
+}
+
+.mBtn {
+  font-size: 16px;
+  margin: 1rem auto;
+  background-color: var(--hBgD);
+  color: var(--Bg);
+  padding: 1rem;
+  border-radius: 30%;
 }
 
 @media screen and (max-width: 1400px) {
   .main-container {
-      grid-template-columns: 1fr 1fr;
-      grid-template-areas:
-          "xp xp"
-          "perclick persec";
+    grid-template-columns: 1fr 1fr;
+    grid-template-areas:
+      "xp xp"
+      "perclick persec";
   }
 
   section {
-      margin-bottom: 1em;
+    margin-bottom: 1em;
   }
 
   .xp {
-      grid-area: xp;
+    grid-area: xp;
   }
 
-
   .inventory-container.per-click {
-      grid-area: perclick;
-
+    grid-area: perclick;
   }
 
   .inventory-container.per-sec {
-      grid-area: persec;
-
+    grid-area: persec;
   }
 
   td:nth-child(2) {
-      width: 14%;
+    width: 14%;
   }
-  
 }
 
 @media screen and (max-width: 1100px) {
   .main-container {
-      grid-template-columns: 1fr;
-      grid-template-areas:
-          "xp"
-          "perclick"
-          "persec";
+    grid-template-columns: 1fr;
+    grid-template-areas:
+      "xp"
+      "perclick"
+      "persec";
   }
   .clicking-area-container {
-      margin: 0 auto;
+    margin: 0 auto;
   }
 
   .inventory-container {
@@ -250,7 +262,7 @@ td>img:hover {
   }
 
   section {
-      margin-top: 1em;
+    margin-top: 1em;
   }
 
   tr {
@@ -265,7 +277,7 @@ td>img:hover {
   }
 
   td:nth-child(2) {
-      width: 15%;
+    width: 15%;
   }
 }
 
