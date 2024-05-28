@@ -10,7 +10,7 @@ const Relations = ({ color, relations, onClick }) => {
         {relations.map((relation, index) => (
           relation.unlocked && (
             <tr key={index}>
-              <td>
+              <td className='desc'>
               {lang === "hu" ? (
                     <p>
                       <strong>

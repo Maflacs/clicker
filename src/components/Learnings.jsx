@@ -13,7 +13,7 @@ const Learnings = ({ color, learnings, onClick }) => {
           (learning, index) =>
             learning.unlocked && (
               <tr key={index}>
-                <td>
+                <td className="desc">
                   {lang === "hu" ? (
                     <p>
                       <strong>

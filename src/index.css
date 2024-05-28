@@ -1,11 +1,14 @@
 *,
 *::before,
 *::after {
-  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
 }
 
 html {
   font-size: 16px;
+  box-sizing: border-box;
   font-family: "Trebuchet MS", "Lucida Grande", "Lucida Sans", Arial, sans-serif;
   scroll-behavior: smooth;
   color: var(--hBgD);
@@ -107,6 +110,11 @@ p {
   user-select: none;
 }
 
+h1 {
+  text-align: center;
+  margin: 1em 0;
+}
+
 .skills-table,
 .business-table {
   margin: 0 20px;
@@ -119,6 +127,7 @@ p {
 }
 
 .main-container {
+  margin-top: 2rem;
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
 }
@@ -168,6 +177,23 @@ td>img:hover {
   opacity: 1;
 }
 
+/* Az alert háttere */
+.alert {
+  background-color: #f44336; /* Piros */
+  color: white;
+  padding: 20px;
+  border-radius: 10px;
+  font-size: 18px;
+}
+
+/* Az alert becsomagolója */
+.alert-wrapper {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
 @media screen and (max-width: 1400px) {
   .main-container {
       grid-template-columns: 1fr 1fr;
@@ -201,6 +227,48 @@ td>img:hover {
   
 }
 
+@media screen and (max-width: 1100px) {
+  .main-container {
+      grid-template-columns: 1fr;
+      grid-template-areas:
+          "xp"
+          "perclick"
+          "persec";
+  }
+  .clicking-area-container {
+      margin: 0 auto;
+  }
+
+  .inventory-container {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+  }
+
+  .skills-table {
+    width: 80%;
+  }
+
+  section {
+      margin-top: 1em;
+  }
+
+  tr {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: nowrap;
+  }
+
+  .desc {
+    width: 80%;
+  }
+
+  td:nth-child(2) {
+      width: 15%;
+  }
+}
+
 @media screen and (max-width: 700px) {
   .toggle {
     right: 1rem;
@@ -213,25 +281,8 @@ td>img:hover {
   .rbtn {
     left: 1rem;
   }
-}
 
-@media screen and (max-width: 992px) {
-  .main-container {
-      grid-template-columns: 1fr;
-      grid-template-areas:
-          "xp"
-          "perclick"
-          "persec";
-  }
-  .clicking-area-container {
-      margin: 0 auto;
-  }
-
-  section {
-      margin-top: 1em;
-  }
-
-  td:nth-child(2) {
-      width: 15%;
+  .skills-table {
+    width: 90%;
   }
 }

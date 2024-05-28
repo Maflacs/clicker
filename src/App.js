@@ -115,7 +115,7 @@ function App() {
     <div className={getClassName()}>
       <Header color={getClassNameContainer()} onRestart={handleRestart} />
       <main className="main-container">
-        <section className="inventory-container per-click">
+        <section className="inventory-container perclick">
           <Learnings color={getClassNameContainer()} learnings={state.learnings} onClick={handleLearningsClicked} />
         </section>
         <section className="clicking-area-container xp">
@@ -123,7 +123,7 @@ function App() {
           <ClickArea onClick={handleKnowledgeClicked} />
           <Knowledge state={state} />
         </section>
-        <section className="inventory-container per-sec">
+        <section className="inventory-container persec">
           <Relations color={getClassNameContainer()} relations={state.relations} onClick={handleRelationsClicked} />
         </section>
       </main>
