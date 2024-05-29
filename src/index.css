@@ -21,6 +21,7 @@ html {
   --BgD: black;
   --TBg: #f8e16c;
   --TBgD: orange;
+  --Btn: #6f42c1;
 }
 
 .bgDark {
@@ -43,6 +44,10 @@ html {
   justify-content: space-around;
   align-items: center;
   margin: 0;
+  padding: 1rem 0;
+  position: fixed;
+  top: 0;
+  z-index: 1;
 }
 
 .rbtn {
@@ -51,12 +56,17 @@ html {
   top: 0.5rem;
 }
 
-.restart {
+.restart, .levelUp {
   font-size: 22px;
-  background-color: var(--Bg);
-  border: 3px solid orange;
+  background-color: var(--Btn);
+  color: var(--Bg);
   border-radius: 30%;
   padding: 1rem;
+  cursor: pointer;
+}
+
+#timer {
+  margin-top: 1rem;
 }
 
 .business-table {
@@ -73,7 +83,7 @@ body {
   width: 50px;
   height: 25px;
   border-radius: 20px;
-  border: 1px solid grey;
+  border: 1px solid var(--Btn);
   background-color: white;
   position: fixed;
   top: 2rem;
@@ -101,7 +111,7 @@ body {
   width: 25px;
   height: 25px;
   border-radius: 50%;
-  background-color: #999;
+  background-color: var(--Btn);
   position: absolute;
   cursor: pointer;
 }
@@ -112,7 +122,7 @@ p {
 
 h1 {
   text-align: center;
-  margin: 1em 0;
+  margin: 0.1em 0;
 }
 
 .skills-table,
@@ -127,7 +137,9 @@ h1 {
 }
 
 .main-container {
-  margin-top: 2rem;
+  margin-top: 4rem;
+  min-height: 100dvh;
+  padding: 2rem 0;
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
 }

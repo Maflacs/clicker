@@ -9,6 +9,7 @@ import { getInitialState } from "./utils/state";
 import LangContext from "./context/LangContext";
 import { ThemeContext } from "./context/ThemeContext";
 import Modal from "./components/Modal";
+import LevelUpComponent from "./components/LevelUpComponent";
 
 function App() {
   const [state, setState] = useState(() => {
@@ -115,54 +116,73 @@ function App() {
     }
   };
 
-    const closeModal = () => {
-      setModalOpen(false);
-    };
+  const closeModal = () => {
+    setModalOpen(false);
+  };
 
-    const handleRestart = () => {
-      const initialState = getInitialState();
-      localStorage.setItem("gameState", JSON.stringify(initialState));
-      setState(initialState);
-    };
+  const handleRestart = () => {
+    const initialState = getInitialState();
+    localStorage.setItem("gameState", JSON.stringify(initialState));
+    setState(initialState);
+  };
 
-    return (
-      <div className={getClassName()}>
-        <Header color={getClassNameContainer()} onRestart={handleRestart} />
-        <div>
-          {modalOpen && (
-            <Modal color={getClassNameContainer()}
-              message={
-                lang === "hu"
-                  ? "Nem áll rendelkezésedre elég tudáspont!"
-                  : "You don't have enough knowledge points!"
-              }
-              onClose={closeModal}
-            />
-          )}
-        </div>
-        <main className="main-container">
-          <section className="inventory-container perclick">
-            <Learnings
-              color={getClassNameContainer()}
-              learnings={state.learnings}
-              onClick={handleLearningsClicked}
-            />
-          </section>
-          <section className="clicking-area-container xp">
-            <Timer sec={state.sec} />
-            <ClickArea onClick={handleKnowledgeClicked} />
-            <Knowledge state={state} />
-          </section>
-          <section className="inventory-container persec">
-            <Relations
-              color={getClassNameContainer()}
-              relations={state.relations}
-              onClick={handleRelationsClicked}
-            />
-          </section>
-        </main>
+  const handleLevelUp = (requiredPoints) => {
+    setState((prevState) => ({
+      ...prevState,
+      knowledge: prevState.knowledge - requiredPoints,
+    }));
+  };
+
+  return (
+    <div className={getClassName()}>
+      <Header
+        color={getClassNameContainer()}
+        setModalOpen={setModalOpen}
+        onRestart={handleRestart}
+        knowledge={state.knowledge}
+      />
+      <div>
+        {modalOpen && (
+          <Modal
+            color={getClassNameContainer()}
+            message={
+              lang === "hu"
+                ? "Nem áll rendelkezésedre elég tudáspont!"
+                : "You don't have enough knowledge points!"
+            }
+            onClose={closeModal}
+          />
+        )}
       </div>
-    );
-};
+      <main className="main-container">
+        <section className="inventory-container perclick">
+          <Learnings
+            color={getClassNameContainer()}
+            learnings={state.learnings}
+            onClick={handleLearningsClicked}
+          />
+        </section>
+        <section className="clicking-area-container xp">
+          <LevelUpComponent
+            knowledge={state.knowledge}
+            onLevelUp={handleLevelUp}
+            modalOpen={modalOpen}
+            setModalOpen={setModalOpen}
+          />
+          <Timer sec={state.sec} />
+          <ClickArea onClick={handleKnowledgeClicked} />
+          <Knowledge state={state} />
+        </section>
+        <section className="inventory-container persec">
+          <Relations
+            color={getClassNameContainer()}
+            relations={state.relations}
+            onClick={handleRelationsClicked}
+          />
+        </section>
+      </main>
+    </div>
+  );
+}
 
 export default App;
