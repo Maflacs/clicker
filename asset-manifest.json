@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/clicker/static/css/main.dcd628f2.css",
-    "main.js": "/clicker/static/js/main.48b58173.js",
+    "main.css": "/clicker/static/css/main.f50173ad.css",
+    "main.js": "/clicker/static/js/main.acb8d255.js",
     "static/media/xp.png": "/clicker/static/media/xp.b915703c0d4a80d4c058.png",
     "static/media/moon.png": "/clicker/static/media/moon.58d6ddbff1c2032d0e0e.png",
     "static/media/duel class.png": "/clicker/static/media/duel class.a2e7eb849e9cb548288b.png",
@@ -10,11 +10,11 @@
     "static/media/Family.png": "/clicker/static/media/Family.9b5bc580a9b1d8cb6966.png",
     "static/media/diri.png": "/clicker/static/media/diri.339b75a0c33fc5679db1.png",
     "index.html": "/clicker/index.html",
-    "main.dcd628f2.css.map": "/clicker/static/css/main.dcd628f2.css.map",
-    "main.48b58173.js.map": "/clicker/static/js/main.48b58173.js.map"
+    "main.f50173ad.css.map": "/clicker/static/css/main.f50173ad.css.map",
+    "main.acb8d255.js.map": "/clicker/static/js/main.acb8d255.js.map"
   },
   "entrypoints": [
-    "static/css/main.dcd628f2.css",
-    "static/js/main.48b58173.js"
+    "static/css/main.f50173ad.css",
+    "static/js/main.acb8d255.js"
   ]
 }
