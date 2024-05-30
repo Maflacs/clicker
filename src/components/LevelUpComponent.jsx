@@ -1,20 +1,19 @@
-import React, { useState } from "react";
+import React from "react";
 import LevelUpButton from "./LevelUpButton";
 import LevelIndicator from "./LevelIndicator";
 
 const LevelUpComponent = ({
-  modalOpen,
-  setModalOpen,
   knowledge,
   onLevelUp,
+  level,
+  modalOpen,
+  setModalOpen,
 }) => {
-  const [level, setLevel] = useState(1);
-  const baseCost = 1000000;
+  const baseCost = 500000;
 
   const handleLevelUp = () => {
     const requiredPoints = calculateRequiredPoints(level);
     if (knowledge >= requiredPoints) {
-      setLevel(level + 1);
       onLevelUp(requiredPoints);
     } else {
       setModalOpen(true);
@@ -22,7 +21,7 @@ const LevelUpComponent = ({
   };
 
   const calculateRequiredPoints = (level) => {
-    return baseCost * 10 ** (level - 1);
+    return baseCost * 5 ** (level - 1);
   };
 
   const requiredPoints = calculateRequiredPoints(level);

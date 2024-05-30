@@ -15,7 +15,7 @@ const Relations = ({ color, relations, onClick }) => {
                     <p>
                       <strong>
                         {relation.relationName[lang]} (
-                        {relation.knowledgePerSecIncrement} tudáspont / sec)
+                        {relation.knowledgePerSecIncrement} tudáspont / mp)
                       </strong>
                     </p>
                   ) : (

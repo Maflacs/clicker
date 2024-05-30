@@ -1,9 +1,9 @@
 import React from 'react';
 
-const Timer = ({ sec }) => {
+const Timer = ({ lang, sec }) => {
     return (
         <div id="timer">
-            <p><strong>{sec} sec</strong></p>
+            <p><strong>{sec} {lang === "hu" ? "másodperc(mp)" : "secundum(sec)"}</strong></p>
         </div>
     );
 };

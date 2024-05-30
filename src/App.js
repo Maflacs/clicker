@@ -17,6 +17,11 @@ function App() {
     return savedState ? JSON.parse(savedState) : getInitialState();
   });
 
+  const [level, setLevel] = useState(() => {
+    const savedLevel = localStorage.getItem("level");
+    return savedLevel ? JSON.parse(savedLevel) : 1;
+  });
+
   const [modalOpen, setModalOpen] = useState(false);
 
   const {
@@ -43,6 +48,10 @@ function App() {
   useEffect(() => {
     localStorage.setItem("gameState", JSON.stringify(state));
   }, [state]);
+
+  useEffect(() => {
+    localStorage.setItem("level", JSON.stringify(level));
+  }, [level]);
 
   const administrateTime = () => {
     let currentTimestamp = new Date().getTime();
@@ -123,7 +132,9 @@ function App() {
   const handleRestart = () => {
     const initialState = getInitialState();
     localStorage.setItem("gameState", JSON.stringify(initialState));
+    localStorage.setItem("level", JSON.stringify(1));
     setState(initialState);
+    setLevel(1);
   };
 
   const handleLevelUp = (requiredPoints) => {
@@ -131,6 +142,7 @@ function App() {
       ...prevState,
       knowledge: prevState.knowledge - requiredPoints,
     }));
+    setLevel((prevLevel) => prevLevel + 1);
   };
 
   return (
@@ -166,10 +178,11 @@ function App() {
           <LevelUpComponent
             knowledge={state.knowledge}
             onLevelUp={handleLevelUp}
+            level={level}
             modalOpen={modalOpen}
             setModalOpen={setModalOpen}
           />
-          <Timer sec={state.sec} />
+          <Timer lang={lang} sec={state.sec} />
           <ClickArea onClick={handleKnowledgeClicked} />
           <Knowledge state={state} />
         </section>
