@@ -286,6 +286,12 @@ body {
   overflow: hidden;
 } 
 
+@media screen and (min-width: 1900px) {
+  .table {
+    width: -webkit-fill-available;
+  }
+}
+
 
 @media screen and (max-width: 1400px) {
   body {
