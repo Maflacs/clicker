@@ -15,9 +15,17 @@ const LevelUpButton = ({
 
   const sound = new Audio(levelUp);
 
-  const handleClick = (index) => {
-    sound.play();
-    onClick(index); 
+  const playSound = () => {
+    sound.play()
+  };
+
+  const handleClick = () => {
+    if (knowledge >= requiredPoints) {
+      playSound();
+      onClick();
+    } else {
+      setModalOpen(true);
+    }
   };
 
   return (
@@ -31,8 +39,7 @@ const LevelUpButton = ({
 
 const formatPrice = (requiredPoints) => {
   if (requiredPoints < 1000) return requiredPoints;
-  let kValue = requiredPoints / 1000;
+  let kValue = Math.ceil(requiredPoints / 1000);
   return `${kValue}K`;
 };
-
 export default LevelUpButton;

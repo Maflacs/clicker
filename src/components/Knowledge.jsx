@@ -10,7 +10,7 @@ const Knowledge = ({ state }) => {
 
   const formatKnowledge = (knowledge) => {
     if (knowledge < 1000) return knowledge;
-    let kValue = knowledge / 1000;
+    let kValue = Math.floor(knowledge / 1000);
     return `${kValue}K`;
   };
 
@@ -27,7 +27,7 @@ const Knowledge = ({ state }) => {
       ) : (
         <div>
           <p>
-            <strong>{state.knowledge} knowledge</strong>
+            <strong>{formatKnowledge(knowledge)} knowledge</strong>
           </p>
           <p>{state.knowledgePerClick} knowledge / click</p>
           <p>{state.knowledgePerSec} knowledge / sec</p>

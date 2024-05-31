@@ -1,13 +1,12 @@
 import React from 'react';
 import magic from "../sounds/magic-spell.wav";
 
-const Relations = ({ lang, color, relations, onClick }) => {
+const Relations = ({ lang, color, relations, onClick, setModalOpen, knowledge }) => {
 
   const sound = new Audio(magic);
 
-  const handleImageClick = (index) => {
+  const playSound = () => {
     sound.play();
-    onClick(index); 
   };
 
   return (
@@ -51,7 +50,13 @@ const Relations = ({ lang, color, relations, onClick }) => {
                   src={relation.link}
                   alt={relation.relationName[lang]}
                   data-index={index}
-                  onClick={() => handleImageClick(index)}
+                  onClick={() => { if (knowledge >= relation.price) {
+                    playSound();
+                    onClick(index);
+                  } else {
+                    setModalOpen(true);
+                  }
+                  }}
                 />
               </td>
             </tr>
@@ -64,7 +69,7 @@ const Relations = ({ lang, color, relations, onClick }) => {
 
 const formatPrice = (price) => {
   if (price < 1000) return price;
-  let kValue = price / 1000;
+  let kValue = Math.ceil(price / 1000);
   return `${kValue}K`;
 };
 

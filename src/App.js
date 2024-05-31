@@ -169,6 +169,8 @@ function App() {
       <main className="main-container">
         <section className="inventory-container perclick">
           <Learnings
+            setModalOpen={setModalOpen}
+            knowledge={state.knowledge}
             color={getClassNameContainer()}
             lang={lang}
             learnings={state.learnings}
@@ -193,6 +195,8 @@ function App() {
             lang={lang}
             relations={state.relations}
             onClick={handleRelationsClicked}
+            setModalOpen={setModalOpen}
+            knowledge={state.knowledge}
           />
         </section>
       </main>
