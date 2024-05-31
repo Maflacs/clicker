@@ -282,7 +282,16 @@ td > img:hover {
   border-radius: 30%;
 }
 
+body {
+  overflow: hidden;
+} 
+
+
 @media screen and (max-width: 1400px) {
+  body {
+    overflow: auto;
+  }
+
   .main-container {
     grid-template-columns: 1fr 1fr;
     grid-template-areas:

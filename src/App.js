@@ -170,6 +170,7 @@ function App() {
         <section className="inventory-container perclick">
           <Learnings
             color={getClassNameContainer()}
+            lang={lang}
             learnings={state.learnings}
             onClick={handleLearningsClicked}
           />
@@ -189,6 +190,7 @@ function App() {
         <section className="inventory-container persec">
           <Relations
             color={getClassNameContainer()}
+            lang={lang}
             relations={state.relations}
             onClick={handleRelationsClicked}
           />

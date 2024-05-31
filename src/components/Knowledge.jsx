@@ -6,12 +6,20 @@ const Knowledge = ({ state }) => {
     state: { lang },
   } = useContext(LangContext);
 
+  const knowledge = state.knowledge;
+
+  const formatKnowledge = (knowledge) => {
+    if (knowledge < 1000) return knowledge;
+    let kValue = knowledge / 1000;
+    return `${kValue}K`;
+  };
+
   return (
     <div id="knowledge-area">
       {lang === "hu" ? (
         <div>
           <p>
-            <strong>{state.knowledge} tudáspont</strong>
+            <strong>{formatKnowledge(knowledge)} tudáspont</strong>
           </p>
           <p>{state.knowledgePerClick} tudáspont / click</p>
           <p>{state.knowledgePerSec} tudáspont / sec</p>
@@ -28,5 +36,7 @@ const Knowledge = ({ state }) => {
     </div>
   );
 };
+
+
 
 export default Knowledge;

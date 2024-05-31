@@ -1,8 +1,14 @@
-import React, { useContext } from 'react';
-import LangContext from '../context/LangContext';
+import React from 'react';
+import magic from "../sounds/magic-spell.wav";
 
-const Relations = ({ color, relations, onClick }) => {
-  const { state: { lang } } = useContext(LangContext);
+const Relations = ({ lang, color, relations, onClick }) => {
+
+  const sound = new Audio(magic);
+
+  const handleImageClick = (index) => {
+    sound.play();
+    onClick(index); 
+  };
 
   return (
     <table className={`skills-table ${color}`}>
@@ -45,7 +51,7 @@ const Relations = ({ color, relations, onClick }) => {
                   src={relation.link}
                   alt={relation.relationName[lang]}
                   data-index={index}
-                  onClick={() => onClick(index)}
+                  onClick={() => handleImageClick(index)}
                 />
               </td>
             </tr>

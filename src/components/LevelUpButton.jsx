@@ -1,5 +1,6 @@
 import React, { useContext } from "react";
 import LangContext from "../context/LangContext";
+import levelUp from "../sounds/achievement.wav";
 
 const LevelUpButton = ({
   level,
@@ -12,8 +13,11 @@ const LevelUpButton = ({
     state: { lang },
   } = useContext(LangContext);
 
-  const handleClick = () => {
-    onClick();
+  const sound = new Audio(levelUp);
+
+  const handleClick = (index) => {
+    sound.play();
+    onClick(index); 
   };
 
   return (
