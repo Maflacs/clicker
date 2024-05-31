@@ -1,20 +1,23 @@
 {
   "files": {
-    "main.css": "/clicker/static/css/main.f50173ad.css",
-    "main.js": "/clicker/static/js/main.acb8d255.js",
+    "main.css": "/clicker/static/css/main.a0980383.css",
+    "main.js": "/clicker/static/js/main.b8953747.js",
+    "static/media/achievement.wav": "/clicker/static/media/achievement.2905e4bb22b60e103cfd.wav",
+    "static/media/magic-spell.wav": "/clicker/static/media/magic-spell.1fc8d45dca99fe99c6f8.wav",
     "static/media/xp.png": "/clicker/static/media/xp.b915703c0d4a80d4c058.png",
     "static/media/moon.png": "/clicker/static/media/moon.58d6ddbff1c2032d0e0e.png",
+    "static/media/pop.wav": "/clicker/static/media/pop.4efde20a5af62b236e13.wav",
     "static/media/duel class.png": "/clicker/static/media/duel class.a2e7eb849e9cb548288b.png",
     "static/media/school.png": "/clicker/static/media/school.a2dd88e94acc2557b63f.png",
     "static/media/books.png": "/clicker/static/media/books.d03dab539ab5e2132a0f.png",
     "static/media/Family.png": "/clicker/static/media/Family.9b5bc580a9b1d8cb6966.png",
     "static/media/diri.png": "/clicker/static/media/diri.339b75a0c33fc5679db1.png",
     "index.html": "/clicker/index.html",
-    "main.f50173ad.css.map": "/clicker/static/css/main.f50173ad.css.map",
-    "main.acb8d255.js.map": "/clicker/static/js/main.acb8d255.js.map"
+    "main.a0980383.css.map": "/clicker/static/css/main.a0980383.css.map",
+    "main.b8953747.js.map": "/clicker/static/js/main.b8953747.js.map"
   },
   "entrypoints": [
-    "static/css/main.f50173ad.css",
-    "static/js/main.acb8d255.js"
+    "static/css/main.a0980383.css",
+    "static/js/main.b8953747.js"
   ]
 }
