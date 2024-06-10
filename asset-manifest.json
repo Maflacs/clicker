@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/clicker/static/css/main.9b151271.css",
-    "main.js": "/clicker/static/js/main.bd7a6056.js",
+    "main.css": "/clicker/static/css/main.03e49d38.css",
+    "main.js": "/clicker/static/js/main.3c6402ef.js",
     "static/media/achievement.wav": "/clicker/static/media/achievement.2905e4bb22b60e103cfd.wav",
     "static/media/magic-spell.wav": "/clicker/static/media/magic-spell.1fc8d45dca99fe99c6f8.wav",
     "static/media/xp.png": "/clicker/static/media/xp.b915703c0d4a80d4c058.png",
@@ -13,11 +13,11 @@
     "static/media/Family.png": "/clicker/static/media/Family.9b5bc580a9b1d8cb6966.png",
     "static/media/diri.png": "/clicker/static/media/diri.339b75a0c33fc5679db1.png",
     "index.html": "/clicker/index.html",
-    "main.9b151271.css.map": "/clicker/static/css/main.9b151271.css.map",
-    "main.bd7a6056.js.map": "/clicker/static/js/main.bd7a6056.js.map"
+    "main.03e49d38.css.map": "/clicker/static/css/main.03e49d38.css.map",
+    "main.3c6402ef.js.map": "/clicker/static/js/main.3c6402ef.js.map"
   },
   "entrypoints": [
-    "static/css/main.9b151271.css",
-    "static/js/main.bd7a6056.js"
+    "static/css/main.03e49d38.css",
+    "static/js/main.3c6402ef.js"
   ]
 }
