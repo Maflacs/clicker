@@ -1,10 +1,11 @@
 import React, { useContext, useEffect, useState } from "react";
-import ChangeLanguage from "./ChangeLanguage";
-import ChangeTheme from "./ChangeTheme";
-import { ThemeContext } from "../context/ThemeContext";
-import { LangContext } from "../context/LangContext";
-import HelpModal from "./HelpModal";
-import RestartModal from "./RestartModal";
+import ChangeLanguage from "../ChangeLanguage/ChangeLanguage";
+import ChangeTheme from "../ChangeTheme/ChangeTheme";
+import { ThemeContext } from "../../context/ThemeContext";
+import { LangContext } from "../../context/LangContext";
+import HelpModal from "../Modals/HelpModal/HelpModal";
+import RestartModal from "../Modals/RestartModal/RestartModal";
+import "./Header.css";
 
 const Header = ({ color, onRestart }) => {
   const {
@@ -34,7 +35,7 @@ const Header = ({ color, onRestart }) => {
   useEffect(() => {}, [darkMode, lang]);
 
   return (
-    <header className={`header ${color}`}>
+    <header>
       <div>
         <div className="rbtn">
           <button className="restart" onClick={toggleRestartModal}>

@@ -1,0 +1,115 @@
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+}
+
+html {
+  font-size: 16px;
+  box-sizing: border-box;
+  font-family: "Trebuchet MS", "Lucida Grande", "Lucida Sans", Arial, sans-serif;
+  scroll-behavior: smooth;
+  color: var(--hBgD);
+}
+
+:root {
+  --hBg: #f8e16c;
+  --hBgD: #343a40;
+  --Bg: #f8f398;
+  --BgD: black;
+  --TBg: #f8e16c;
+  --TBgD: orange;
+  --Btn: #6f42c1;
+}
+
+body {
+  background-color: var(--Bg);
+  margin: 0;
+  overflow: hidden;
+}
+
+.bgDark {
+  background-color: var(--hBgD);
+  color: var(--Bg);
+}
+
+.bgDarkC {
+  background-color: var(--TBgD);
+  color: var(--hBgD);
+}
+
+.bgLightC {
+  background-color: var(--hBg);
+}
+
+.restart,
+.levelUp {
+  font-size: 16px;
+  background-color: var(--Btn);
+  color: var(--Bg);
+  border-radius: 30%;
+  padding: 0.5rem;
+  cursor: pointer;
+  margin-top: 1rem;
+}
+
+.help-modal,
+.restart-modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.help-modal-content,
+.restart-modal-content {
+  border-radius: 8px;
+  font-size: 20px;
+  max-width: 500px;
+  width: 100%;
+  text-align: center;
+  position: relative;
+  padding: 1rem;
+}
+
+.help-modal .close,
+.restart-modal .close {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  font-size: 1.5rem;
+  cursor: pointer;
+}
+
+p {
+  user-select: none;
+}
+
+h1 {
+  text-align: center;
+  margin: 0.1em 0;
+}
+
+img {
+  cursor: pointer;
+  user-select: none;
+  border-radius: 50%;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  -ms-border-radius: 50%;
+  -o-border-radius: 50%;
+}
+
+@media screen and (max-width: 1400px) {
+  body {
+    overflow: auto;
+  }
+}
+

@@ -1,8 +1,15 @@
 import React from "react";
-import magic from "../sounds/magic-spell.wav";
+import magic from "../../assets/sounds/magic-spell.wav";
 
-const Learnings = ({ lang, color, learnings, knowledge, onClick, setModalOpen }) => {
-
+const Learnings = ({
+  lang,
+  color,
+  learnings,
+  knowledge,
+  onClick,
+  setModalOpen,
+  formatPrice,
+}) => {
   const playSound = () => {
     const sound = new Audio(magic);
     sound.play();
@@ -50,12 +57,13 @@ const Learnings = ({ lang, color, learnings, knowledge, onClick, setModalOpen })
                     src={learning.link}
                     alt={learning.learningName[lang]}
                     data-index={index}
-                    onClick={() => { if (knowledge >= learning.price) {
-                      playSound();
-                      onClick(index);
-                    } else {
-                      setModalOpen(true);
-                    }
+                    onClick={() => {
+                      if (knowledge >= learning.price) {
+                        playSound();
+                        onClick(index);
+                      } else {
+                        setModalOpen(true);
+                      }
                     }}
                   />
                 </td>
@@ -65,12 +73,6 @@ const Learnings = ({ lang, color, learnings, knowledge, onClick, setModalOpen })
       </tbody>
     </table>
   );
-};
-
-const formatPrice = (price) => {
-  if (price < 1000) return price;
-  let kValue = Math.ceil(price / 1000);
-  return `${kValue}K`;
 };
 
 export default Learnings;

@@ -1,15 +1,15 @@
-import classImg from "../img/class.png";
-import homeworkImg from "../img/homework.png";
-import libraryImg from "../img/library.png";
-import duelClassImg from "../img/duel class.png";
-import rbfImg from "../img/RBF.png";
-import ravaszImg from "../img/RAVASZ.png";
-import friendsImg from "../img/Friends.png";
-import familyImg from "../img/Family.png";
-import booksImg from "../img/books.png";
-import specialClassImg from "../img/special_class.png";
-import diriImg from "../img/diri.png";
-import schoolImg from "../img/school.png";
+import classImg from "../assets/img/class.png";
+import homeworkImg from "../assets/img/homework.png";
+import libraryImg from "../assets/img/library.png";
+import duelClassImg from "../assets/img/duel class.png";
+import rbfImg from "../assets/img/RBF.png";
+import ravaszImg from "../assets/img/RAVASZ.png";
+import friendsImg from "../assets/img/Friends.png";
+import familyImg from "../assets/img/Family.png";
+import booksImg from "../assets/img/books.png";
+import specialClassImg from "../assets/img/special_class.png";
+import diriImg from "../assets/img/diri.png";
+import schoolImg from "../assets/img/school.png";
 
 export const CHANGE_TYPE = {
   LEARNING: "LEARNING",

@@ -1,0 +1,109 @@
+header {
+  width: 100%;
+  background-color: lightgray;
+  color: var(--hBgD);
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  margin: 0;
+  padding: 1rem 0;
+  top: 0;
+  position: fixed;
+  z-index: 1;
+}
+
+.rbtn {
+  position: fixed;
+  left: 5rem;
+  top: 0.5rem;
+}
+
+.help {
+  font-size: 20px;
+  color: var(--Bg);
+  background-color: var(--Btn);
+  margin-left: 1rem;
+  cursor: pointer;
+  border-radius: 30%;
+}
+
+.toggle {
+    width: 50px;
+    height: 25px;
+    border-radius: 20px;
+    border: 1px solid var(--Btn);
+    background-color: white;
+    position: fixed;
+    top: 2rem;
+    right: 5rem;
+    display: flex;
+    justify-content: space-around;
+  }
+  
+  .lang {
+    right: 9rem;
+    color: black;
+  }
+  
+  .lang p {
+    margin-top: 0.1rem;
+  }
+  
+  .icon {
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+  }
+  
+  .button {
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+    background-color: var(--Btn);
+    position: absolute;
+    cursor: pointer;
+  }
+
+  .confirm {
+    background-color: #28a745;
+    color: white;
+    border: none;
+    padding: 0.5rem 1rem;
+    margin: 0.5rem;
+    cursor: pointer;
+    border-radius: 30%;
+  }
+  
+  .cancel {
+    background-color: #dc3545;
+    color: white;
+    border: none;
+    padding: 0.5rem 1rem;
+    margin: 0.5rem;
+    cursor: pointer;
+    border-radius: 30%;
+  }
+
+  @media screen and (max-width: 700px) {
+    .toggle {
+      right: 1rem;
+    }
+  
+    .lang {
+      right: 5rem;
+    }
+  
+    .rbtn {
+      left: 1rem;
+    }
+  }
+
+  @media screen and (max-width: 550px) {
+    .title {
+      margin-top: 4rem;
+    }
+  
+    .header {
+      padding: 0.3rem;
+    }
+}

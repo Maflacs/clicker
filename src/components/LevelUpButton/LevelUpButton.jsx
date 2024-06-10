@@ -1,9 +1,8 @@
 import React, { useContext } from "react";
-import LangContext from "../context/LangContext";
-import levelUp from "../sounds/achievement.wav";
+import LangContext from "../../context/LangContext";
+import levelUp from "../../assets/sounds/achievement.wav";
 
 const LevelUpButton = ({
-  level,
   knowledge,
   requiredPoints,
   onClick,

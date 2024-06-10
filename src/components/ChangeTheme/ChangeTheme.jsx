@@ -1,7 +1,7 @@
 import React, { useContext } from "react";
-import { ThemeContext } from "../context/ThemeContext";
-import sun from "../img/sun.png";
-import moon from "../img/moon.png";
+import { ThemeContext } from "../../context/ThemeContext";
+import sun from "../../assets/img/sun.png";
+import moon from "../../assets/img/moon.png";
 
 const ChangeTheme = () => {
   const theme = useContext(ThemeContext);

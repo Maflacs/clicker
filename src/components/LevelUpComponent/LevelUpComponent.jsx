@@ -1,6 +1,6 @@
 import React from "react";
-import LevelUpButton from "./LevelUpButton";
-import LevelIndicator from "./LevelIndicator";
+import LevelUpButton from "../LevelUpButton/LevelUpButton";
+import LevelIndicator from "../LevelIndicator/LevelIndicator";
 
 const LevelUpComponent = ({
   knowledge,
@@ -8,6 +8,7 @@ const LevelUpComponent = ({
   level,
   modalOpen,
   setModalOpen,
+  lang,
 }) => {
   const baseCost = 500000;
 
@@ -28,9 +29,8 @@ const LevelUpComponent = ({
 
   return (
     <div>
-      <LevelIndicator level={level} />
+      <LevelIndicator level={level} lang={lang}/>
       <LevelUpButton
-        level={level}
         requiredPoints={requiredPoints}
         onClick={handleLevelUp}
         modalOpen={modalOpen}

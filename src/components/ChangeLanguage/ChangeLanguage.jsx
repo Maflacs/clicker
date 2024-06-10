@@ -1,5 +1,5 @@
 import React, { useContext } from "react";
-import { LangContext } from "../context/LangContext";
+import { LangContext } from "../../context/LangContext";
 
 const ChangeLanguage= () => {
   const { state, dispatch } = useContext(LangContext);

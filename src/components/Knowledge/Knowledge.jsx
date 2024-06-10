@@ -1,10 +1,7 @@
-import React, { useContext } from "react";
-import LangContext from "../context/LangContext";
+import React from "react";
 
-const Knowledge = ({ state }) => {
-  const {
-    state: { lang },
-  } = useContext(LangContext);
+
+const Knowledge = ({ state, lang }) => {
 
   const knowledge = state.knowledge;
 

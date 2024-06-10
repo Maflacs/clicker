@@ -9,7 +9,7 @@ const HelpModal = ({ color, onClose, lang }) => {
         </button>
         {lang === "hu" ? (
           <div>
-            <h2>Játék Szabályok</h2>
+            <h2>Játékszabályok</h2>
             <p>
               A játék célja, hogy minél több tudáspontot gyűjts. Kattints a
               középső területre tudáspontokért, vásárolj fejlesztéseket a
