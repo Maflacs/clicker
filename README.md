@@ -1,3 +1,7 @@
+#The foundation of the site was created based on a tutorial video in JavaScript. https://www.youtube.com/playlist?list=PLT2URj1QEDqLn8cFgRs-h_DruuTC07HQn
+#I converted it to React and expanded it with new features.
+
+
 ### Links
 
 - Live Site URL: https://maflacs.github.io/clicker/
@@ -6,7 +10,8 @@
 ### Built with
 
 - HTML5 
-- CSS 
+- CSS
+- Grid
 - Flexbox
 - React
 
